@@ -106,6 +106,7 @@ img {
 
 .search {
     position: relative;
+    display: flex;
 }
 
 .search-input {
@@ -118,12 +119,15 @@ img {
     border: none;
 
     font-family: 'Montserrat';
-        text-transform: capitalize;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #A2B3CD;
 }
 
 .search-input::placeholder {
     font-family: 'Montserrat';
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.25;
@@ -135,6 +139,31 @@ img {
     position: absolute;
     top: 7px;
     right: 15px;
+}
+
+.search-input:focus {
+    box-shadow: 0px 0px 5px 3px #A2B3CD;
+}
+
+.search-input:focus ~ .search-svg {
+    display: none;
+}
+
+.clear-btn {
+    display: none;
+    background: transparent;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    border: none;
+}
+
+.clear-btn:hover .clear-svg{
+    transform: scale(1.2);
+}
+
+.search-input:focus ~ .clear-btn {
+    display: block;
 }
 
 /* FOOTER */
@@ -200,8 +229,17 @@ img {
         padding: 5px 10px;
     }
 
+    .search-input {
+        font-size: 12px;
+    }
+
     .search-input::placeholder {
         font-size: 12px;
+    }
+
+    .clear-btn {
+        top: 4px;
+        right: 0px;
     }
 
     .github-link,
@@ -253,7 +291,8 @@ img {
     }
 
     .search-input {
-        padding: 2px 8px 4px;
+        padding: 4px 8px;
+        font-size: 10px;
     }
 
     .search-input::placeholder {
@@ -261,8 +300,18 @@ img {
     }
 
     .search-svg {
-        top: 3px;
+        top: 0;
         right: 5px;
+        width: 15px;
+    }
+
+    .clear-btn {
+        top: 2px;
+    }
+
+    .clear-svg {
+        width: 15px;
+        height: 15px;
     }
 
     .author-name {
@@ -272,12 +321,16 @@ img {
 
 @media screen and (max-width: 391px) {
 
+    .nav-link {
+        font-size: 8px;
+    }
+
     .search-wrapper {
         width: 20%;
     }
 
     .search-input {
-        padding: 0px 8px 4px;
+        font-size: 8px;
     }
 
     .search-input::placeholder {
@@ -290,6 +343,15 @@ img {
 
     .search-svg {
         display: none;
+    }
+
+    .clear-btn {
+        top: -2px;
+    }
+
+    .clear-svg {
+        width: 10px;
+        height: 10px;
     }
 
     .footer {
