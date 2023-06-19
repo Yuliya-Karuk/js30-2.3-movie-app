@@ -87,6 +87,9 @@ img {
 
     display: block;
     padding: 10px 20px;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 .nav-link:hover,
@@ -123,6 +126,9 @@ img {
     font-size: 16px;
     line-height: 1.25;
     color: #A2B3CD;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 .search-input::placeholder {
@@ -156,6 +162,9 @@ img {
     top: 7px;
     right: 10px;
     border: none;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 .clear-btn:hover .clear-svg{
@@ -177,6 +186,7 @@ img {
 
 .github-link,
 .rs-link {
+    cursor: pointer;
     transition-duration: 0.3s;
 }
 
@@ -202,6 +212,112 @@ img {
     font-size: 20px;
 
     margin: 0;
+}
+
+/* POPULAR */
+
+.popular,
+.search-results {
+    margin: 40px;
+}
+
+.popular-list {
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.search-list {
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-shadow: 0.5px 0.5px 3px var(--basic-yellow);
+}
+
+.movie-poster {
+    width: 200px;
+    height: 100%;
+    filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.36));
+    border-radius: 7px;
+}
+
+.movie-details {
+    padding: 10px;
+}
+
+.movie-title {
+    color: var(--basic-white);
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.movie-date {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 11px;
+    line-height: 13px;
+
+    color: #AFAFAF; 
+}
+
+.movie-rate {
+    color: var(--basic-yellow);
+    font-size: 11px;
+    line-height: 13px;
+
+    display: flex;
+}
+
+.imbd-img {
+    margin-right: 5px;
+}
+
+.imbd-rate {
+    margin: 0;
+}
+
+.movie-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-favorite {
+    width: 14px;
+    height: 14px;
+
+    background-color: transparent;
+    border: none;
+    background-image: url(../images/heart.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.movie-favorite:hover,
+.movie-favorite:focus {
+    transform: scale(1.2);
+}
+
+.movie-favorite-red {
+    background-image: url(../images/heart_red.svg);
 }
 
 /* MEDIA */
