@@ -92,10 +92,10 @@ async function showTopMovie(url) {
     const neededGenres = getGenre(neededFilm.genre_ids, dataGenres.genres).join(', ')
 
     topFilm.insertAdjacentHTML("beforeend",
-        `<div class="movie-top-poster"></div>
-        <div class="movie-top-description">  
-            <a href="#" class="movie-title">${neededFilm.title}</a>
-            <p class="movie-top-overview">${neededFilm.overview}</p>
+        `<div class="top-movie-poster"></div>
+        <div class="top-movie-description">  
+            <a href="#" class="top-movie-title">${neededFilm.title}</a>
+            <p class="top-movie-overview">${neededFilm.overview}</p>
             <p class="movie-genres">${neededGenres}</p>
             <div class="top-movie-details">
                 <a class="watch" type="button" aria-label="link to watch film">
@@ -111,15 +111,15 @@ async function showTopMovie(url) {
                     </svg>
                 </button>
             </div>
-            <div class="movie-rate">
-                <img class="imbd-img" src="images/imbd.svg" width="28" height="14" alt="icon IMBD rating">
-                <p class="imbd-rate">${neededFilm.vote_average}</p>
-                <p class="movie-date">${neededFilm.release_date}</p>
+            <div class="top-movie-rate">
+                <img class="top-imbd-img" src="images/imbd.svg" width="28" height="14" alt="icon IMBD rating">
+                <p class="top-imbd-rate">${neededFilm.vote_average}</p>
+                <p class="top-movie-date">${neededFilm.release_date}</p>
             </div>
         </div>`
     );
 
-    document.querySelector('.movie-top-poster').style.backgroundImage = `url(https://www.themoviedb.org/t/p/w1280/${neededFilm.poster_path})`
+    document.querySelector('.top-movie-poster').style.backgroundImage = `url(https://www.themoviedb.org/t/p/w1280/${neededFilm.poster_path})`
 }
 
 getMovies(popularUrl, popularList); //загрузить стартовую страницу с популярными фильмами

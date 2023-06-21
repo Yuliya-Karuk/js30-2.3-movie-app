@@ -408,14 +408,21 @@ img {
 
 .top-film {
     position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.2;
 }
 
-.top-film .movie-title {
+.top-movie-title {
     text-decoration: none;
     font-family: 'Griffy', cursive;
     font-weight: 400;
     font-size: 40px;
     color: var(--basic-yellow);
+
+    display: block;
+    margin-bottom: 15px;
 }
 
 .top-film .movie-title:hover,
@@ -423,19 +430,19 @@ img {
     color: var(--basic-white);
 }
 
-.movie-top-poster {
+.top-movie-poster {
     position: absolute;
     margin-top: -110px;
     max-width: 1440px;
     width: 100%;
-    height: 1120px;
+    height: 1110px;
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
 }
 
-.movie-top-description {
+.top-movie-description {
     position: relative;
     z-index: 5;
     padding: 100px 200px 100px 100px;
@@ -443,22 +450,33 @@ img {
     box-sizing: content-box;
 }
 
-.movie-top-overview {
+.top-movie-overview {
     font-size: 14px;
-    line-height: 1.2;
-    color: var(--basic-white)
+    color: var(--basic-white);
+
+    margin: 0;
+}
+
+.movie-genres {
+    font-size: 16px;
+    margin: 15px 0px;
+}
+
+.top-movie-details {
+    display: flex;
 }
 
 .watch {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
     color: var(--basic-white);
     text-transform: uppercase;
 
     padding: 13px 23px;
+    margin-right: 10px;
     background: #5436A9;
     border-radius: 30px;
+
+    display: flex;
+    align-items: center;
     
     cursor: pointer;
     transition-duration: 0.3s;
@@ -478,17 +496,19 @@ img {
 }
 
 .add-favorite {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.2;
     color: var(--basic-white);
     text-transform: uppercase;
+    font-weight: inherit;
+    line-height: inherit;
 
     padding: 13px 23px;
 
     background: #5C5C5C;
     border: none;
     border-radius: 30px;
+
+    display: flex;
+    align-items: center;
 
     cursor: pointer;
     transition-duration: 0.3s;
@@ -507,25 +527,24 @@ img {
     margin-right: 20px;
 }
 
-.top-film .movie-rate {
-    font-size: 20px;
-
+.top-movie-rate {
+    display: flex;
     margin-top: 25px;
     align-items: center;
 }
 
-.top-film .imbd-img { 
+.top-imbd-img { 
     width: 54px;
     height: 27px;
     margin-right: 10px;
 }
 
-.top-film .imbd-rate {
+.top-imbd-rate {
+    margin: 0;
     margin-right: 40px;
 }
 
-.top-film .movie-date {
-    font-size: inherit;
+.top-movie-date {
     margin: 0;
 }
 
@@ -535,6 +554,10 @@ img {
 
     .header-title {
         margin-right: 30px;
+    }
+
+    .top-movie-title {
+        font-size: 36px;
     }
 }
 
@@ -567,6 +590,35 @@ img {
         right: 0px;
     }
 
+    .top-movie-poster {
+        height: 960px;
+    }
+
+    .top-movie-description {
+        padding: 50px 100px 50px 50px;
+    }
+
+    .top-movie-title {
+        font-size: 32px;
+    }
+
+    .top-movie-overview {
+        font-size: 12px;
+    }
+
+    .movie-genres {
+        font-size: 14px;
+        margin: 10px 0px;
+    }
+
+    .top-film {
+        font-size: 16px;
+    }
+
+    .top-movie-details svg {
+        transform: scale(0.9);
+    }
+
     .github-link,
     .rs-link {
         transform: scale(0.8);
@@ -591,6 +643,22 @@ img {
     .nav-link {
         font-size: 12px;
         padding: 5px 10px;
+    }
+
+    .top-film {
+        font-size: 12px;
+    }
+
+    .top-movie-title {
+        font-size: 30px;
+    }
+
+    .top-movie-overview {
+        font-size: 10px;
+    }
+
+    .top-movie-rate {
+        margin-top: 10px
     }
 
     .footer {
@@ -637,6 +705,27 @@ img {
     .clear-svg {
         width: 15px;
         height: 15px;
+    }
+
+    .top-movie-title {
+        font-size: 20px;
+    }
+
+    .top-movie-description {
+        padding: 50px 50px 50px 25px;
+    }
+
+    .add-favorite, .watch {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .movie-genres {
+        font-size: 10px;
+    }
+
+    .top-imbd-img {
+        transform: scale(0.8);
     }
 
     .author-name {
