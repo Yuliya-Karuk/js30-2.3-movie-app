@@ -289,7 +289,6 @@ img {
 
 .movie-wrapper-link {
     display: block;
-    height: 100%;
     position: relative;
 
     font-size: 0;
@@ -319,8 +318,14 @@ img {
 .movie-poster {
     width: 200px;
     height: auto;
+    min-height: 300px;
+
     filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.36));
     border-radius: 7px;
+
+    font-size: 16px;
+    color: var(--basic-white);
+    text-decoration: none;
 }
 
 .movie-item:hover .movie-poster {

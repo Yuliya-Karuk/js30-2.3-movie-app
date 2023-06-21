@@ -37,6 +37,7 @@ function clearInput() {
 // функция, которая получает значение, введенное в инпут и выдает по нему фильмы
 function getInput(event) {
     event.preventDefault();
+    searchList.innerHTML = ''
     let searchUrl = `https://api.themoviedb.org/3/search/movie?query=${searchInput.value}&api_key=16d35851d48e8bf86f00899a21ddb357&language=en-US&page=1`;
     getMovies(searchUrl, searchList);
     searchList.classList.remove('visually-hidden')
@@ -58,7 +59,7 @@ async function getMovies(url, htmlEl) {
         htmlEl.insertAdjacentHTML("beforeend",
             `<li class="movie-item">
                 <a class="movie-wrapper-link" href="#" aria-label="link on movie">
-                    <img class="movie-poster" src="https://www.themoviedb.org/t/p/w1280/${el.poster_path}" width="200" height="100%" alt="movie poster">
+                    <img class="movie-poster" src="${el.poster_path ? `https://www.themoviedb.org/t/p/w1280/${el.poster_path}` : 'images/image-not-found.jpg'}" width="200" height="100%" alt="movie poster">
                     <p class="movie-overview">${el.overview}</p>
                 </a>
                 <div class="movie-details">
